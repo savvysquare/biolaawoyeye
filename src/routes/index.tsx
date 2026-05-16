@@ -116,25 +116,27 @@ function Home() {
         </div>
       </section>
 
-      {/* PILLARS — clean grid */}
+      {/* PILLARS — original manifesto pillars */}
       <section className="container-edge py-20 md:py-28">
         <div className="grid md:grid-cols-12 gap-10 mb-14">
           <div className="md:col-span-5">
-            <p className="eyebrow">The mandate</p>
+            <p className="eyebrow">The original five pillars</p>
             <h2 className="mt-4 display text-4xl md:text-5xl font-semibold text-balance">
-              Four pillars. One constituency. Measurable results.
+              Five promises. One constituency. Measurable results.
             </h2>
           </div>
           <p className="md:col-span-7 md:pt-10 text-foreground/70 max-w-xl">
-            Every project below is recorded, dated and tied to a manifesto promise. No press-release politics.
+            These are the five pillars Hon. Awoyeye contested on in 2023. Every project on this site is tied to one of them — and the lessons learned are now shaping a sharper set of priorities for the next term.
           </p>
         </div>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {[
-            { img: waterImg, k: "Water & Sanitation", v: "Solar boreholes restoring water to communities dry for 20+ years." },
-            { img: eduImg, k: "Education", v: "Classrooms rebuilt, scholarships awarded, 1,500+ women trained." },
-            { img: elecImg, k: "Electricity", v: "Transformers donated and installed across Modomo, Sabo and beyond." },
-            { img: ife, k: "Welfare & Security", v: "OSHI enrolment, monthly stipends, legal aid and palliatives." },
+            { img: eduImg, k: "Education", v: "Classrooms rebuilt, scholarships awarded, teachers and pupils equipped." },
+            { img: ife, k: "Healthcare", v: "OSHI enrolment, medical outreaches, support for the elderly and PWDs." },
+            { img: waterImg, k: "Social & Welfare Infrastructure", v: "Solar boreholes, street lights, transformers, roads — the everyday backbone of life in Ife Central." },
+            { img: elecImg, k: "Security", v: "Operational support to local security outfits, lighting up dark corners, legal aid for the vulnerable." },
+            { img: ife, k: "SME Support", v: "Empowerment grants, women's vocational training (1,500+), youth start-up kits." },
+            { img: waterImg, k: "Youth, Sports & Special Needs", v: "Championed at the State Assembly as Chairman of the House Committee — tournaments, athlete support, inclusion programmes." },
           ].map((p) => (
             <article key={p.k} className="group">
               <div className="aspect-[4/5] overflow-hidden rounded-2xl bg-muted">

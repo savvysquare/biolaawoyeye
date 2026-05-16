@@ -65,16 +65,16 @@
 :root {
   --radius: 0.75rem;
 
-  /* Accord Party — green/yellow/red on near-white, Crescent-style editorial */
-  --background: oklch(0.985 0.003 95);            /* near white, faintly warm */
+  /* Accord Party — yellow-dominant, green/red accents */
+  --background: oklch(0.975 0.04 100);            /* soft yellow cream */
   --foreground: oklch(0.18 0.02 150);             /* deep green-black ink */
   --ink: oklch(0.16 0.02 150);
   --cream: oklch(0.985 0.003 95);
-  --grass: oklch(0.55 0.18 145);                  /* Accord green */
-  --sun: oklch(0.88 0.18 100);                    /* Accord yellow */
+  --grass: oklch(0.5 0.18 145);                   /* Accord green */
+  --sun: oklch(0.9 0.19 100);                     /* Accord yellow */
   --flame: oklch(0.58 0.23 28);                   /* Accord red */
   --ember: oklch(0.48 0.22 28);
-  --tint-sun: oklch(0.96 0.07 100);               /* pastel yellow block */
+  --tint-sun: oklch(0.94 0.11 100);               /* vibrant yellow block */
   --tint-grass: oklch(0.95 0.05 145);             /* pastel green block */
 
   --card: oklch(1 0 0);
@@ -82,8 +82,8 @@
   --popover: oklch(1 0 0);
   --popover-foreground: var(--foreground);
 
-  --primary: var(--grass);
-  --primary-foreground: oklch(0.99 0.005 95);
+  --primary: var(--sun);
+  --primary-foreground: var(--ink);
 
   --secondary: oklch(0.96 0.005 145);
   --secondary-foreground: var(--foreground);
@@ -162,7 +162,7 @@
     font-weight: 500;
     color: var(--muted-foreground);
   }
-  .container-edge { padding-left: clamp(1.25rem, 4vw, 4rem); padding-right: clamp(1.25rem, 4vw, 4rem); }
+  .container-edge { max-width: 1240px; margin-left: auto; margin-right: auto; padding-left: clamp(1.25rem, 5vw, 5rem); padding-right: clamp(1.25rem, 5vw, 5rem); }
   .text-balance { text-wrap: balance; }
   /* Crescent-style hairline grid frame */
   .hair-frame {
