@@ -33,14 +33,11 @@ type Manifesto = {
 };
 
 const MANIFESTO_CATEGORIES = [
-  "Water & Sanitation",
   "Education",
-  "Electricity",
   "Healthcare",
-  "Roads & Infrastructure",
+  "Infrastructure",
   "Security",
-  "Welfare",
-  "Economic Empowerment",
+  "SME Support",
 ];
 
 function Admin() {
