@@ -42,51 +42,54 @@ function Home() {
 
   return (
     <div>
-      {/* HERO — Crescent editorial */}
-      <section className="container-edge pt-10 md:pt-16 pb-20 md:pb-28">
-        <div className="grid lg:grid-cols-12 gap-10 lg:gap-12 items-start">
+      {/* Hero — Adeleke style vibrant gradient */}
+      <section className="container-edge pt-16 md:pt-24 pb-20 md:pb-28 relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-[600px] bg-gradient-to-br from-sun via-sun/80 to-gold/40 -z-10 opacity-60 blur-3xl animate-pulse" />
+        
+        <div className="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
           <div className="lg:col-span-7 pt-6">
-            <p className="eyebrow">{c.hero_eyebrow ?? "Constituency Report · Ife Central"}</p>
-            <h1 className="mt-6 display font-semibold text-[clamp(2.5rem,6.2vw,5.5rem)] leading-[1.02] text-balance">
-              {c.hero_title ?? "How Ife Central went from neglect to 35+ completed projects in 24 months."}
+            <p className="eyebrow text-ink/80 font-bold tracking-[0.3em]">{c.hero_eyebrow ?? "CONSTITUENCY REPORT · IFE CENTRAL"}</p>
+            <h1 className="mt-8 display font-black text-[clamp(2.8rem,7vw,6.5rem)] leading-[0.95] text-balance text-foreground drop-shadow-sm uppercase">
+              {c.hero_title ?? "How Ife Central went from neglect to 35+ projects."}
             </h1>
-            <p className="mt-7 max-w-xl text-base md:text-lg text-foreground/70 leading-relaxed">
-              {c.hero_subtitle ?? "Hon. Engr. Abiola Jeremiah Awoyeye has spent his first term turning the manifesto into water, roads, scholarships and stipends. The work continues on the Accord Party platform."}
+            <p className="mt-8 max-w-xl text-lg md:text-xl text-foreground/80 leading-relaxed font-medium">
+              {c.hero_subtitle ?? "Hon. Engr. Abiola Jeremiah Awoyeye is turning the manifesto into progress. The work continues on the Accord Party platform."}
             </p>
-            <div className="mt-9 flex flex-wrap gap-3">
+            <div className="mt-10 flex flex-wrap gap-4">
               <Link
                 to="/works"
-                className="group inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-sm font-medium text-background hover:bg-grass transition"
+                className="group inline-flex items-center gap-3 rounded-full bg-grass px-8 py-4 text-base font-bold text-white hover:scale-105 transition shadow-lg shadow-grass/20"
               >
-                See the works
-                <ArrowUpRight size={16} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                SEE THE WORKS
+                <ArrowUpRight size={20} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </Link>
               <Link
                 to="/manifesto"
-                className="inline-flex items-center gap-2 rounded-full border border-foreground/20 px-6 py-3 text-sm font-medium hover:border-foreground transition"
+                className="inline-flex items-center gap-3 rounded-full border-2 border-foreground/10 bg-white/50 backdrop-blur-sm px-8 py-4 text-base font-bold hover:bg-white hover:border-foreground transition"
               >
-                Read the manifesto
+                READ MANIFESTO
               </Link>
             </div>
           </div>
-          <div className="lg:col-span-5">
-            <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-tint-grass">
-              <img src={portrait} alt="Hon. Engr. Abiola Jeremiah Awoyeye" className="h-full w-full object-cover" width={1024} height={1280} />
+          <div className="lg:col-span-5 relative">
+            <div className="absolute -inset-4 bg-sun/20 blur-2xl rounded-full animate-pulse" />
+            <div className="relative aspect-[4/5] overflow-hidden rounded-3xl bg-tint-grass ring-8 ring-white shadow-2xl">
+              <img src={portrait} alt="Hon. Engr. Abiola Jeremiah Awoyeye" className="h-full w-full object-cover grayscale hover:grayscale-0 transition-all duration-700" width={1024} height={1280} />
             </div>
           </div>
         </div>
 
-        {/* Stat tiles — pastel yellow + green à la Crescent */}
-        <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        {/* Stat tiles — vibrant style */}
+        <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {[
-            { v: c.stat_projects ?? "35+", l: "completed projects", tone: "bg-tint-sun" },
-            { v: c.stat_wards ?? "11", l: "wards reached", tone: "bg-tint-grass" },
-            { v: c.stat_years ?? "2", l: "years in office", tone: "bg-tint-sun" },
-            { v: c.stat_communities ?? "20+", l: "communities served", tone: "bg-tint-grass" },
+            { v: c.stat_projects ?? "35+", l: "COMPLETED PROJECTS", tone: "bg-sun shadow-sun/20" },
+            { v: c.stat_wards ?? "11", l: "WARDS REACHED", tone: "bg-grass text-white shadow-grass/20" },
+            { v: c.stat_years ?? "2", l: "YEARS IN OFFICE", tone: "bg-sun shadow-sun/20" },
+            { v: c.stat_communities ?? "20+", l: "COMMUNITIES SERVED", tone: "bg-grass text-white shadow-grass/20" },
           ].map((s) => (
-            <div key={s.l} className={`${s.tone} rounded-2xl p-6 md:p-7`}>
-              <p className="display text-5xl md:text-6xl font-medium tracking-tight text-foreground">{s.v}</p>
-              <p className="mt-6 text-sm text-foreground/70">{s.l}</p>
+            <div key={s.l} className={`${s.tone} rounded-3xl p-8 md:p-10 transition-transform hover:-translate-y-1 shadow-xl`}>
+              <p className="display text-6xl md:text-7xl font-black tracking-tighter">{s.v}</p>
+              <p className="mt-6 text-xs font-black tracking-[0.2em] opacity-80">{s.l}</p>
             </div>
           ))}
         </div>

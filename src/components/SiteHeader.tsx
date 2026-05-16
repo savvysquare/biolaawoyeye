@@ -28,14 +28,13 @@ export function SiteHeader() {
           : "bg-background border-b border-transparent"
       }`}
     >
-      <div className="container-edge flex h-16 items-center justify-between">
-        <Link to="/" className="flex items-center gap-2.5 group">
-          <span className="relative grid h-9 w-9 place-items-center rounded-full bg-sun ring-2 ring-grass">
-            <span className="display text-sm font-bold text-grass">A</span>
+      <div className="container-edge flex h-20 items-center justify-between">
+        <Link to="/" className="flex items-center gap-3.5 group">
+          <span className="relative grid h-11 w-11 place-items-center rounded-full bg-sun ring-3 ring-grass shadow-sm group-hover:scale-105 transition-transform">
+            <span className="display text-lg font-black text-grass">A</span>
           </span>
-          <span className="flex flex-col leading-none">
-            <span className="display text-[15px] font-semibold tracking-tight">Hon. Awoyeye</span>
-            <span className="eyebrow text-[10px]">Ife Central · Chair, Youth, Sports & Special Needs</span>
+          <span className="flex flex-col leading-tight">
+            <span className="display text-[20px] md:text-[22px] font-bold tracking-tight text-foreground uppercase">Hon. Abiola Awoyeye</span>
           </span>
         </Link>
 

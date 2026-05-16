@@ -44,6 +44,7 @@
   --color-ember: var(--ember);
   --color-grass: var(--grass);
   --color-sun: var(--sun);
+  --color-gold: var(--gold);
   --color-tint-sun: var(--tint-sun);
   --color-tint-grass: var(--tint-grass);
 
@@ -65,17 +66,18 @@
 :root {
   --radius: 0.75rem;
 
-  /* Accord Party — yellow-dominant, green/red accents */
-  --background: oklch(0.975 0.04 100);            /* soft yellow cream */
-  --foreground: oklch(0.18 0.02 150);             /* deep green-black ink */
-  --ink: oklch(0.16 0.02 150);
-  --cream: oklch(0.985 0.003 95);
-  --grass: oklch(0.5 0.18 145);                   /* Accord green */
-  --sun: oklch(0.9 0.19 100);                     /* Accord yellow */
-  --flame: oklch(0.58 0.23 28);                   /* Accord red */
-  --ember: oklch(0.48 0.22 28);
-  --tint-sun: oklch(0.94 0.11 100);               /* vibrant yellow block */
-  --tint-grass: oklch(0.95 0.05 145);             /* pastel green block */
+  /* Accord Party & Adeleke Aesthetic — yellow-dominant, grass green */
+  --background: oklch(0.99 0.01 95);               /* very soft cream background */
+  --foreground: oklch(0.12 0.02 150);             /* very deep dark green-ink for high contrast */
+  --ink: oklch(0.12 0.02 150);
+  --cream: oklch(1 0 0);
+  --grass: oklch(0.48 0.18 145);                  /* Accord Green */
+  --sun: oklch(0.88 0.19 100);                    /* Vibrant Yellow from Adeleke image */
+  --gold: oklch(0.78 0.22 80);                    /* Gold/Orange gradient tone */
+  --flame: oklch(0.55 0.22 28);                   /* Accord Red */
+  --ember: oklch(0.45 0.2 28);
+  --tint-sun: oklch(0.92 0.13 100);               /* block yellow */
+  --tint-grass: oklch(0.96 0.04 145);             /* soft grass tint */
 
   --card: oklch(1 0 0);
   --card-foreground: var(--foreground);
@@ -85,33 +87,21 @@
   --primary: var(--sun);
   --primary-foreground: var(--ink);
 
-  --secondary: oklch(0.96 0.005 145);
+  --secondary: oklch(0.97 0.005 145);
   --secondary-foreground: var(--foreground);
-  --muted: oklch(0.96 0.005 145);
-  --muted-foreground: oklch(0.45 0.02 150);
-  --accent: var(--tint-sun);
-  --accent-foreground: var(--foreground);
+  --muted: oklch(0.97 0.005 145);
+  --muted-foreground: oklch(0.4 0.02 150);
+  --accent: var(--sun);
+  --accent-foreground: var(--ink);
 
   --destructive: var(--flame);
-  --destructive-foreground: oklch(0.99 0.005 95);
-  --border: oklch(0.9 0.008 145);
-  --input: oklch(0.9 0.008 145);
+  --destructive-foreground: oklch(1 0 0);
+  --border: oklch(0.92 0.005 145);
+  --input: oklch(0.92 0.005 145);
   --ring: var(--grass);
-
-  --chart-1: var(--flame);
-  --chart-2: var(--ember);
-  --chart-3: oklch(0.5 0.1 60);
-  --chart-4: oklch(0.75 0.15 90);
-  --chart-5: oklch(0.4 0.05 60);
 
   --sidebar: var(--ink);
   --sidebar-foreground: var(--cream);
-  --sidebar-primary: var(--flame);
-  --sidebar-primary-foreground: var(--cream);
-  --sidebar-accent: oklch(0.25 0.02 60);
-  --sidebar-accent-foreground: var(--cream);
-  --sidebar-border: oklch(0.25 0.02 60);
-  --sidebar-ring: var(--flame);
 }
 
 .dark {
