@@ -58,10 +58,10 @@ function Manifesto() {
               The original 2023 manifesto stood on five pillars: Education, Healthcare, Social & Welfare Infrastructure, Security, and Small & Medium Scale Business Support.
             </p>
             <p>
-              Two years in office have shown where the work has had to grow new branches. A sixth priority has emerged organically: Youth, Sports & Special Needs.
+              Two years in office have validated this compass. Every project delivered—from solar boreholes to surgical outreatches—has been a direct fulfillment of these five promises.
             </p>
             <p>
-              The next term keeps the original five pillars intact and adds this lived-experience sixth, so that the manifesto continues to be written by the constituency.
+              The current manifesto for the next term remains anchored in these same five pillars, ensuring a consistency of vision and a deepened focus on the restoration of Ife Central.
             </p>
           </div>
         </div>
