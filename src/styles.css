@@ -162,7 +162,7 @@
     font-weight: 500;
     color: var(--muted-foreground);
   }
-  .container-edge { padding-left: clamp(1.25rem, 4vw, 4rem); padding-right: clamp(1.25rem, 4vw, 4rem); }
+  .container-edge { max-width: 1240px; margin-left: auto; margin-right: auto; padding-left: clamp(1.25rem, 5vw, 5rem); padding-right: clamp(1.25rem, 5vw, 5rem); }
   .text-balance { text-wrap: balance; }
   /* Crescent-style hairline grid frame */
   .hair-frame {
