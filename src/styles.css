@@ -82,8 +82,8 @@
   --popover: oklch(1 0 0);
   --popover-foreground: var(--foreground);
 
-  --primary: var(--grass);
-  --primary-foreground: oklch(0.99 0.005 95);
+  --primary: var(--sun);
+  --primary-foreground: var(--ink);
 
   --secondary: oklch(0.96 0.005 145);
   --secondary-foreground: var(--foreground);
