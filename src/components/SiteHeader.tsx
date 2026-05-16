@@ -34,8 +34,8 @@ export function SiteHeader() {
             <span className="display text-sm font-bold text-grass">A</span>
           </span>
           <span className="flex flex-col leading-none">
-            <span className="display text-[15px] font-semibold tracking-tight">Awoyeye</span>
-            <span className="eyebrow text-[10px]">Ife Central · Accord</span>
+            <span className="display text-[15px] font-semibold tracking-tight">Hon. Awoyeye</span>
+            <span className="eyebrow text-[10px]">Ife Central · Chair, Youth, Sports & Special Needs</span>
           </span>
         </Link>
 
