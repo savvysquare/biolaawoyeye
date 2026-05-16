@@ -24,27 +24,28 @@ export function SiteHeader() {
     <header
       className={`sticky top-0 z-50 transition-all ${
         scrolled
-          ? "bg-background/90 backdrop-blur-md border-b border-border"
+          ? "bg-background/90 backdrop-blur-md border-b border-dashed border-border"
           : "bg-background border-b border-transparent"
       }`}
     >
-      <div className="container-edge flex h-20 items-center justify-between">
-        <Link to="/" className="flex items-center gap-3.5 group">
-          <span className="relative grid h-11 w-11 place-items-center rounded-full bg-sun ring-3 ring-grass shadow-sm group-hover:scale-105 transition-transform">
-            <span className="display text-lg font-black text-grass">A</span>
+      <div className="container-edge flex h-24 items-center justify-between">
+        <Link to="/" className="flex items-center gap-4 group">
+          <span className="relative grid h-12 w-12 place-items-center rounded-full bg-sun ring-2 ring-grass shadow-xl shadow-grass/10 group-hover:scale-105 transition-transform duration-500">
+            <span className="display text-xl font-black text-grass">A</span>
           </span>
-          <span className="flex flex-col leading-tight">
-            <span className="display text-[20px] md:text-[22px] font-bold tracking-tight text-foreground uppercase">Hon. Abiola Awoyeye</span>
+          <span className="flex flex-col leading-none">
+            <span className="display text-xl md:text-2xl font-black tracking-tighter text-foreground uppercase">Hon. Abiola Awoyeye</span>
+            <span className="text-[10px] font-black tracking-[0.2em] text-foreground/40 uppercase mt-1">Constituency Report</span>
           </span>
         </Link>
 
-        <nav className="hidden md:flex items-center gap-7">
+        <nav className="hidden md:flex items-center gap-8">
           {nav.map((n) => (
             <Link
               key={n.to}
               to={n.to}
-              className="text-sm tracking-tight text-foreground/70 hover:text-foreground transition"
-              activeProps={{ className: "text-foreground font-medium" }}
+              className="text-[11px] font-black tracking-[0.2em] text-foreground/40 hover:text-grass transition-colors uppercase"
+              activeProps={{ className: "text-grass" }}
               activeOptions={{ exact: n.to === "/" }}
             >
               {n.label}
@@ -52,30 +53,30 @@ export function SiteHeader() {
           ))}
           <Link
             to="/contact"
-            className="ml-2 inline-flex items-center rounded-full bg-foreground px-5 py-2 text-sm font-medium text-background hover:bg-grass transition"
+            className="ml-4 inline-flex items-center rounded-full bg-grass px-6 py-2.5 text-xs font-black tracking-widest text-white hover:bg-ink hover:scale-105 transition-all uppercase"
           >
-            Get involved
+            JOIN THE TEAM
           </Link>
         </nav>
 
         <button
           onClick={() => setOpen((o) => !o)}
-          className="md:hidden grid place-items-center h-10 w-10 rounded-full border border-border"
+          className="md:hidden grid place-items-center h-12 w-12 rounded-full border border-border"
           aria-label="Toggle menu"
         >
-          {open ? <X size={18} /> : <Menu size={18} />}
+          {open ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
       {open && (
-        <div className="md:hidden border-t border-border bg-background">
-          <div className="container-edge py-4 flex flex-col gap-1">
+        <div className="md:hidden border-t border-dashed border-border bg-background animate-in slide-in-from-top-4 duration-300">
+          <div className="container-edge py-10 flex flex-col gap-6">
             {nav.map((n) => (
               <Link
                 key={n.to}
                 to={n.to}
                 onClick={() => setOpen(false)}
-                className="py-2 text-base"
+                className="text-2xl font-black uppercase tracking-tighter"
               >
                 {n.label}
               </Link>
@@ -83,9 +84,9 @@ export function SiteHeader() {
             <Link
               to="/contact"
               onClick={() => setOpen(false)}
-              className="mt-2 inline-flex items-center justify-center rounded-full bg-foreground px-5 py-2.5 text-sm font-medium text-background"
+              className="mt-4 inline-flex items-center justify-center rounded-full bg-grass px-5 py-4 text-sm font-black text-white uppercase tracking-widest"
             >
-              Get involved
+              JOIN THE TEAM
             </Link>
           </div>
         </div>

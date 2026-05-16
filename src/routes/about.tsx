@@ -33,49 +33,59 @@ function About() {
   ];
 
   return (
-    <div>
-      <section className="container-edge pt-16 md:pt-24 pb-20">
-        <div className="grid lg:grid-cols-12 gap-12 items-start">
-          <div className="lg:col-span-7">
-            <p className="eyebrow text-primary">About the Honourable</p>
-            <h1 className="mt-6 display text-[clamp(2.5rem,6vw,5.5rem)] text-balance">
-              A young engineer rebuilding Ife Central, one ward at a time.
+    <div className="bg-background selection:bg-sun selection:text-ink">
+      {/* Editorial Header — About */}
+      <section className="border-b border-dashed border-border">
+        <div className="container-edge grid lg:grid-cols-12 min-h-[60vh]">
+          <div className="lg:col-span-8 py-16 md:py-24 lg:pr-16 flex flex-col justify-center border-r border-dashed border-border">
+            <p className="eyebrow text-grass font-bold tracking-[0.25em] mb-8">ABOUT THE HONOURABLE</p>
+            <h1 className="display font-black text-[clamp(2.8rem,7vw,6rem)] leading-[0.9] text-balance uppercase mb-10">
+              Rebuilding Ife Central, ward by ward.
             </h1>
-            <p className="mt-8 text-lg text-foreground/75 leading-relaxed max-w-2xl">
-              {c.about_body}
-            </p>
-
-            <div className="mt-12 grid sm:grid-cols-2 gap-6">
-              <Block title="Mandate" body="Member, Osun State House of Assembly representing Ife Central Constituency (Iremo, Ilare, Moore)." />
-              <Block title="Committee" body="Chairman, House Committee on Youth, Sports and Special Needs — Osun State House of Assembly." />
-              <Block title="Sworn in" body="6 June 2023, following a decisive victory at the 2023 general elections." />
-              <Block title="Profession" body="Engineer by training — bringing problem-solving and discipline into governance." />
-              <Block title="Party" body="Now contesting under the Accord Party. Formerly PDP." />
-              <Block title="Pillars" body="Education · Healthcare · Welfare Infrastructure · Security · SME Support." />
+            <div className="max-w-2xl text-lg md:text-xl text-foreground/70 leading-relaxed font-medium">
+              <p>{c.about_body}</p>
             </div>
           </div>
-
-          <div className="lg:col-span-5 lg:sticky lg:top-24">
-            <div className="aspect-[4/5] overflow-hidden rounded-2xl">
-              <img src={portrait} alt="Portrait" className="h-full w-full object-cover" loading="lazy" />
-            </div>
-            <p className="mt-4 eyebrow text-muted-foreground">Power to the People</p>
+          <div className="lg:col-span-4 bg-tint-sun/30 flex items-center justify-center p-8 md:p-12">
+             <div className="relative aspect-[3/4] w-full overflow-hidden rounded-3xl shadow-2xl ring-1 ring-border">
+               <img src={portrait} alt="Hon. Abiola Awoyeye" className="h-full w-full object-cover grayscale" />
+             </div>
           </div>
         </div>
       </section>
 
-      <section className="bg-ink text-cream py-24">
-        <div className="container-edge">
-          <p className="eyebrow text-primary">Timeline</p>
-          <h2 className="mt-3 display text-4xl md:text-5xl">From mandate to milestones.</h2>
-          <div className="mt-16 grid gap-px bg-cream/10 rounded-2xl overflow-hidden">
+      {/* Grid Content — Mandate Blocks */}
+      <section className="border-b border-dashed border-border">
+        <div className="container-edge grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-border border-x border-dashed border-border">
+          <Block title="Mandate" body="Member, Osun State House of Assembly representing Ife Central Constituency (Iremo, Ilare, Moore)." />
+          <Block title="Committee" body="Chairman, House Committee on Youth, Sports and Special Needs — Osun State House of Assembly." />
+          <Block title="Sworn in" body="6 June 2023, following a decisive victory at the 2023 general elections." />
+          <Block title="Profession" body="Engineer by training — bringing problem-solving and discipline into governance." />
+          <Block title="Party" body="Now contesting under the Accord Party. Formerly PDP." />
+          <Block title="Pillars" body="Education · Healthcare · Welfare Infrastructure · Security · SME Support." />
+        </div>
+      </section>
+
+      {/* Timeline — Dark Editorial Style */}
+      <section className="bg-ink text-cream border-t border-dashed border-border">
+        <div className="container-edge py-24">
+          <div className="grid lg:grid-cols-12 gap-12 items-end mb-20">
+            <div className="lg:col-span-8">
+              <p className="eyebrow text-sun mb-6 uppercase">Timeline</p>
+              <h2 className="display text-5xl md:text-7xl font-black uppercase leading-none">From mandate to milestones.</h2>
+            </div>
+          </div>
+          
+          <div className="grid gap-px bg-cream/10 border border-cream/10">
             {timeline.map(([year, label, body]) => (
-              <div key={year + label} className="bg-ink grid md:grid-cols-12 gap-6 p-8">
-                <div className="md:col-span-2">
-                  <p className="display text-3xl text-primary">{year}</p>
-                  <p className="eyebrow text-cream/60 mt-1">{label}</p>
+              <div key={year + label} className="bg-ink grid md:grid-cols-12 gap-8 p-10 md:p-14 hover:bg-cream/[0.02] transition-colors">
+                <div className="md:col-span-3">
+                  <p className="display text-5xl md:text-6xl font-black text-sun">{year}</p>
+                  <p className="eyebrow text-cream/40 mt-4 uppercase tracking-widest">{label}</p>
                 </div>
-                <p className="md:col-span-10 text-cream/85 leading-relaxed">{body}</p>
+                <div className="md:col-span-9 flex items-center">
+                  <p className="text-xl md:text-2xl text-cream/80 leading-relaxed font-medium">{body}</p>
+                </div>
               </div>
             ))}
           </div>
@@ -87,9 +97,9 @@ function About() {
 
 function Block({ title, body }: { title: string; body: string }) {
   return (
-    <div className="rounded-xl border border-border p-6">
-      <p className="eyebrow text-primary">{title}</p>
-      <p className="mt-2 text-sm text-foreground/80">{body}</p>
+    <div className="bg-background p-10 hover:bg-tint-sun/10 transition-colors">
+      <p className="eyebrow text-grass mb-6 uppercase font-bold tracking-widest">{title}</p>
+      <p className="text-lg md:text-xl text-foreground/80 leading-relaxed font-medium">{body}</p>
     </div>
   );
 }

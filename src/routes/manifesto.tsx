@@ -26,38 +26,41 @@ function Manifesto() {
   const previous = items.filter((i) => i.term === "previous");
 
   return (
-    <div>
-      <section className="container-edge pt-16 md:pt-24 pb-16">
-        <p className="eyebrow text-primary">The Manifesto</p>
-        <h1 className="mt-6 display text-[clamp(2.5rem,6vw,5.5rem)] text-balance max-w-4xl">
-          Promises kept. Promises ahead.
-        </h1>
-        <p className="mt-6 max-w-2xl text-lg text-foreground/75">
-          What was promised in 2023 — and what is being promised for the next term on the Accord Party platform.
-        </p>
+    <div className="bg-background selection:bg-sun selection:text-ink">
+      {/* Editorial Header — Manifesto */}
+      <section className="border-b border-dashed border-border">
+        <div className="container-edge py-16 md:py-24">
+          <p className="eyebrow text-grass font-bold tracking-[0.25em] mb-8">THE MANIFESTO</p>
+          <h1 className="display font-black text-[clamp(2.5rem,7vw,6.5rem)] leading-[0.9] text-balance uppercase max-w-5xl">
+            Promises kept. <span className="text-grass italic">Promises ahead.</span>
+          </h1>
+          <p className="mt-10 max-w-2xl text-lg md:text-2xl text-foreground/70 leading-relaxed font-medium">
+            What was promised in 2023 — and what is being promised for the next term on the Accord Party platform.
+          </p>
+        </div>
       </section>
 
-      <Section title="Current Manifesto" eyebrow="2027 · Accord Party" items={current} accent />
-      <Section title="Previous Manifesto" eyebrow="2023 · As contested under PDP" items={previous} />
+      <Section title="Current Manifesto" eyebrow="2027 · ACCORD PARTY" items={current} accent />
+      <Section title="Previous Manifesto" eyebrow="2023 · PREVIOUS TERM" items={previous} />
 
-      {/* Pillar shift narrative */}
-      <section className="border-y border-dashed border-border bg-tint-sun">
-        <div className="container-edge py-20 md:py-28 grid md:grid-cols-12 gap-10">
-          <div className="md:col-span-5">
-            <p className="eyebrow">The shift</p>
-            <h2 className="mt-3 display text-3xl md:text-5xl font-semibold text-balance">
+      {/* Pillar shift narrative — Crescent Two-Column Split */}
+      <section className="border-y border-dashed border-border bg-tint-sun/5">
+        <div className="container-edge grid lg:grid-cols-12">
+          <div className="lg:col-span-4 py-20 md:py-28 lg:pr-12 border-r border-dashed border-border">
+            <p className="eyebrow mb-6 text-grass">The Shift</p>
+            <h2 className="display text-4xl md:text-6xl font-black uppercase leading-none">
               Same compass. Sharper map.
             </h2>
           </div>
-          <div className="md:col-span-7 space-y-5 text-foreground/80 leading-relaxed">
+          <div className="lg:col-span-8 py-20 md:py-28 lg:pl-16 space-y-8 text-lg text-foreground/70 leading-relaxed font-medium">
             <p>
-              The original 2023 manifesto stood on five pillars: <strong>Education, Healthcare, Social & Welfare Infrastructure, Security,</strong> and <strong>Small & Medium Scale Business Support</strong>. Two years in office have shown which of these doors the people of Ife Central knock on hardest — and where the work has had to grow new branches.
+              The original 2023 manifesto stood on five pillars: <strong>Education, Healthcare, Social & Welfare Infrastructure, Security,</strong> and <strong>Small & Medium Scale Business Support</strong>. Two years in office have shown which of these doors the people of Ife Central knock on hardest.
             </p>
             <p>
-              Out of the SME and Welfare pillars, a sixth priority has emerged organically: <strong>Youth, Sports & Special Needs</strong> — a portfolio Hon. Awoyeye now chairs at the State Assembly. What began as empowerment grants has become tournaments, athlete stipends and inclusion programmes for persons with disabilities.
+              Out of the SME and Welfare pillars, a sixth priority has emerged organically: <strong>Youth, Sports & Special Needs</strong> — a portfolio Hon. Awoyeye now chairs at the State Assembly. What began as empowerment grants has become tournaments, athlete stipends and inclusion programmes.
             </p>
             <p>
-              The next term keeps the original five pillars intact and adds this lived-experience sixth, so that the manifesto continues to be written by the constituency, not just for it.
+              The next term keeps the original five pillars intact and adds this lived-experience sixth, so that the manifesto continues to be written by the constituency.
             </p>
           </div>
         </div>
@@ -78,37 +81,36 @@ function Section({
   accent?: boolean;
 }) {
   return (
-    <section className={`py-20 ${accent ? "bg-ink text-cream" : ""}`}>
+    <section className={`border-b border-dashed border-border ${accent ? "bg-ink text-cream" : ""}`}>
       <div className="container-edge">
-        <div className="flex items-end justify-between gap-6 mb-12">
-          <div>
-            <p className={`eyebrow ${accent ? "text-primary" : "text-primary"}`}>{eyebrow}</p>
-            <h2 className="mt-3 display text-3xl md:text-5xl">{title}</h2>
-          </div>
+        <div className="py-20 md:py-28">
+           <p className={`eyebrow ${accent ? "text-sun" : "text-grass"} mb-6 font-black tracking-widest uppercase`}>{eyebrow}</p>
+           <h2 className="display text-5xl md:text-7xl font-black uppercase leading-none">{title}</h2>
         </div>
-        <div className={`grid gap-px ${accent ? "bg-cream/10" : "bg-border"} rounded-2xl overflow-hidden border ${accent ? "border-cream/10" : "border-border"}`}>
+        
+        <div className={`grid gap-px ${accent ? "bg-cream/10" : "bg-border"} border-x border-t border-dashed ${accent ? "border-cream/10" : "border-border"}`}>
           {items.map((it, i) => (
             <div
               key={it.id}
-              className={`${accent ? "bg-ink" : "bg-background"} grid md:grid-cols-12 gap-6 p-8 md:p-10`}
+              className={`${accent ? "bg-ink" : "bg-background"} grid md:grid-cols-12 gap-10 p-10 md:p-16 hover:bg-tint-sun/5 transition-colors`}
             >
               <div className="md:col-span-1">
-                <p className="display text-3xl text-primary">{String(i + 1).padStart(2, "0")}</p>
+                <p className={`display text-5xl font-black ${accent ? "text-sun" : "text-grass"} opacity-40`}>{String(i + 1).padStart(2, "0")}</p>
               </div>
-              <div className="md:col-span-3">
-                <p className="eyebrow text-primary">{it.category}</p>
-                <h3 className="display text-xl mt-2">{it.title}</h3>
+              <div className="md:col-span-4">
+                <p className={`eyebrow ${accent ? "text-sun" : "text-grass"} mb-4 text-[10px] font-black uppercase tracking-widest`}>{it.category}</p>
+                <h3 className="display text-2xl font-bold uppercase leading-tight">{it.title}</h3>
               </div>
-              <div className="md:col-span-8 flex items-start gap-4">
-                <ArrowRight size={18} className="mt-1 text-primary shrink-0" />
-                <p className={`${accent ? "text-cream/80" : "text-foreground/80"} leading-relaxed`}>
+              <div className="md:col-span-7 flex items-start gap-6">
+                <ArrowRight size={24} className={`${accent ? "text-sun" : "text-grass"} shrink-0 mt-1`} />
+                <p className={`text-xl ${accent ? "text-cream/70" : "text-foreground/70"} leading-relaxed font-medium`}>
                   {it.description}
                 </p>
               </div>
             </div>
           ))}
           {items.length === 0 && (
-            <div className={`${accent ? "bg-ink text-cream/60" : "bg-background text-muted-foreground"} p-10 text-center`}>
+            <div className={`p-20 text-center uppercase tracking-widest font-black ${accent ? "text-cream/20" : "text-foreground/10"}`}>
               No items yet.
             </div>
           )}

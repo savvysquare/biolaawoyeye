@@ -154,8 +154,17 @@
     font-weight: 500;
     color: var(--muted-foreground);
   }
-  .container-edge { max-width: 1240px; margin-left: auto; margin-right: auto; padding-left: clamp(1.25rem, 5vw, 5rem); padding-right: clamp(1.25rem, 5vw, 5rem); }
+  .container-edge { 
+    max-width: 1400px; 
+    margin-left: auto; 
+    margin-right: auto; 
+    padding-left: clamp(1.25rem, 5vw, 5rem); 
+    padding-right: clamp(1.25rem, 5vw, 5rem); 
+  }
   .text-balance { text-wrap: balance; }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  
   /* Crescent-style hairline grid frame */
   .hair-frame {
     border-top: 1px dashed var(--border);
