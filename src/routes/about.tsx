@@ -28,7 +28,7 @@ function About() {
     ["2023", "June", "Sworn in as Member representing Ife Central at the Osun State House of Assembly."],
     ["2023", "First 100 days", "Solar boreholes commissioned at OAU Junior Staff Quarters; street lights at Abagbooro Elefon."],
     ["2024", "Year One", "Classrooms rebuilt at Oluorogbo High School and St. David's. Transformer installations across Modomo."],
-    ["2025", "Year Two", "Legal Aid Programme launched. 1,500+ women trained. Wider OSHI enrolment for elderly and PWDs."],
+    ["2025", "Year Two", "Legal Aid Programme launched. 1,500+ women trained. Wider OHIS enrolment for elderly and PWDs."],
     ["2026", "Ahead", "Now contesting on the platform of the Accord Party — to renew a mandate that is already working."],
   ];
 

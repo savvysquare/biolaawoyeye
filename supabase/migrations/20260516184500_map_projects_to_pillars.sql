@@ -15,7 +15,9 @@ UPDATE public.projects
 SET category = 'SME Support' 
 WHERE category IN ('Economic Empowerment', 'Economic', 'Small & Medium Scale Business Support', 'Youth, Sports & Special Needs');
 
-UPDATE public.projects SET category = 'Healthcare' WHERE title ILIKE '%OSHI%' OR title ILIKE '%health%' OR title ILIKE '%medical%' OR title ILIKE '%wheelchair%';
+UPDATE public.projects SET category = 'Healthcare' WHERE title ILIKE '%OSHI%' OR title ILIKE '%OHIS%' OR title ILIKE '%health%' OR title ILIKE '%medical%' OR title ILIKE '%wheelchair%';
+UPDATE public.projects SET title = REPLACE(title, 'OSHI', 'OHIS') WHERE title ILIKE '%OSHI%';
+
 UPDATE public.projects SET category = 'Education' WHERE title ILIKE '%school%' OR title ILIKE '%classroom%' OR title ILIKE '%scholarship%' OR title ILIKE '%student%';
 UPDATE public.projects SET category = 'Infrastructure' WHERE title ILIKE '%borehole%' OR title ILIKE '%road%' OR title ILIKE '%transformer%' OR title ILIKE '%water%';
 UPDATE public.projects SET category = 'Security' WHERE title ILIKE '%police%' OR title ILIKE '%vigilante%' OR title ILIKE '%security%';
@@ -30,7 +32,8 @@ UPDATE public.manifesto_items
 SET category = 'SME Support' 
 WHERE category IN ('Economic Empowerment', 'Economic', 'Small & Medium Scale Business Support', 'Youth, Sports & Special Needs');
 
-UPDATE public.manifesto_items SET category = 'Healthcare' WHERE title ILIKE '%health%' OR title ILIKE '%medical%' OR title ILIKE '%oshi%';
+UPDATE public.manifesto_items SET category = 'Healthcare' WHERE title ILIKE '%health%' OR title ILIKE '%medical%' OR title ILIKE '%oshi%' OR title ILIKE '%ohis%';
+UPDATE public.manifesto_items SET title = REPLACE(title, 'OSHI', 'OHIS') WHERE title ILIKE '%OSHI%';
 UPDATE public.manifesto_items SET category = 'Education' WHERE title ILIKE '%school%' OR title ILIKE '%education%' OR title ILIKE '%learning%';
 UPDATE public.manifesto_items SET category = 'Security' WHERE title ILIKE '%police%' OR title ILIKE '%security%';
 UPDATE public.manifesto_items SET category = 'Infrastructure' WHERE title ILIKE '%water%' OR title ILIKE '%road%' OR title ILIKE '%infrastructure%';

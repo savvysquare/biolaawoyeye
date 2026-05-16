@@ -6,7 +6,7 @@ export const mapToPillar = (cat: string) => {
     return "Education";
   }
   
-  if (c.includes("health") || c.includes("medical") || c.includes("oshi") || c.includes("wheelchair")) {
+  if (c.includes("health") || c.includes("medical") || c.includes("oshi") || c.includes("ohis") || c.includes("wheelchair")) {
     return "Healthcare";
   }
   
