@@ -13,14 +13,23 @@ export const Route = createFileRoute("/manifesto")({
   component: Manifesto,
 });
 
+import { mapToPillar } from "@/lib/pillars";
+
 function Manifesto() {
-  const { data: items = [] } = useQuery({
+  const { data: rawItems = [] } = useQuery({
     queryKey: ["manifesto"],
     queryFn: async () => {
       const { data } = await supabase.from("manifesto_items").select("*").order("sort_order");
       return data ?? [];
     },
   });
+
+  const items = useMemo(() => {
+    return rawItems.map(it => ({
+      ...it,
+      category: mapToPillar(it.category)
+    }));
+  }, [rawItems]);
 
   const current = items.filter((i) => i.term === "current");
   const previous = items.filter((i) => i.term === "previous");

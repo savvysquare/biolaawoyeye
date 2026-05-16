@@ -14,8 +14,10 @@ export const Route = createFileRoute("/works")({
   component: Works,
 });
 
+import { mapToPillar, PILLARS } from "@/lib/pillars";
+
 function Works() {
-  const { data: projects = [] } = useQuery({
+  const { data: rawProjects = [] } = useQuery({
     queryKey: ["projects"],
     queryFn: async () => {
       const { data } = await supabase.from("projects").select("*").order("sort_order");
@@ -23,10 +25,14 @@ function Works() {
     },
   });
 
-  const categories = useMemo(
-    () => ["All", ...Array.from(new Set(projects.map((p) => p.category)))],
-    [projects],
-  );
+  const projects = useMemo(() => {
+    return rawProjects.map(p => ({
+      ...p,
+      category: mapToPillar(p.category)
+    }));
+  }, [rawProjects]);
+
+  const categories = useMemo(() => ["All", ...PILLARS], []);
   const [active, setActive] = useState("All");
 
   const filtered = active === "All" ? projects : projects.filter((p) => p.category === active);

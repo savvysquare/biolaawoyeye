@@ -1,13 +1,11 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
-import { ArrowUpRight, ArrowRight, Quote } from "lucide-react";
+import { useMemo } from "react";
+import { ArrowRight, Quote } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import type { Media } from "@/lib/media";
-import portrait from "@/assets/hero-portrait.jpg";
 import ife from "@/assets/ife-landscape.jpg";
-import waterImg from "@/assets/work-water.jpg";
-import eduImg from "@/assets/work-education.jpg";
-import elecImg from "@/assets/work-electricity.jpg";
+import { mapToPillar } from "@/lib/pillars";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -30,13 +28,20 @@ function Home() {
     },
   });
 
-  const { data: projects = [] } = useQuery({
+  const { data: rawProjects = [] } = useQuery({
     queryKey: ["projects"],
     queryFn: async () => {
       const { data } = await supabase.from("projects").select("*").order("sort_order");
       return data ?? [];
     },
   });
+
+  const projects = useMemo(() => {
+    return rawProjects.map(p => ({
+      ...p,
+      category: mapToPillar(p.category)
+    }));
+  }, [rawProjects]);
 
   const featured = projects.slice(0, 6);
 
