@@ -24,30 +24,28 @@ export function SiteHeader() {
     <header
       className={`sticky top-0 z-50 transition-all ${
         scrolled
-          ? "bg-background/85 backdrop-blur-md border-b border-border"
-          : "bg-transparent"
+          ? "bg-background/90 backdrop-blur-md border-b border-border"
+          : "bg-background border-b border-transparent"
       }`}
     >
       <div className="container-edge flex h-16 items-center justify-between">
         <Link to="/" className="flex items-center gap-2.5 group">
-          <span className="grid h-9 w-9 place-items-center rounded-full bg-primary text-primary-foreground display text-lg font-semibold">
-            A
+          <span className="relative grid h-9 w-9 place-items-center rounded-full bg-sun ring-2 ring-grass">
+            <span className="display text-sm font-bold text-grass">A</span>
           </span>
           <span className="flex flex-col leading-none">
-            <span className="display text-base font-medium">Awoyeye</span>
-            <span className="eyebrow text-[10px] text-muted-foreground">
-              Ife Central · Accord
-            </span>
+            <span className="display text-[15px] font-semibold tracking-tight">Awoyeye</span>
+            <span className="eyebrow text-[10px]">Ife Central · Accord</span>
           </span>
         </Link>
 
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-center gap-7">
           {nav.map((n) => (
             <Link
               key={n.to}
               to={n.to}
-              className="text-sm tracking-tight text-foreground/80 hover:text-primary transition"
-              activeProps={{ className: "text-primary" }}
+              className="text-sm tracking-tight text-foreground/70 hover:text-foreground transition"
+              activeProps={{ className: "text-foreground font-medium" }}
               activeOptions={{ exact: n.to === "/" }}
             >
               {n.label}
@@ -55,7 +53,7 @@ export function SiteHeader() {
           ))}
           <Link
             to="/contact"
-            className="ml-2 inline-flex items-center rounded-full bg-primary px-5 py-2 text-sm font-medium text-primary-foreground hover:bg-ember transition"
+            className="ml-2 inline-flex items-center rounded-full bg-foreground px-5 py-2 text-sm font-medium text-background hover:bg-grass transition"
           >
             Get involved
           </Link>
@@ -86,7 +84,7 @@ export function SiteHeader() {
             <Link
               to="/contact"
               onClick={() => setOpen(false)}
-              className="mt-2 inline-flex items-center justify-center rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground"
+              className="mt-2 inline-flex items-center justify-center rounded-full bg-foreground px-5 py-2.5 text-sm font-medium text-background"
             >
               Get involved
             </Link>
