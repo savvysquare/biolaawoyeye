@@ -47,9 +47,11 @@ function About() {
 
             <div className="mt-12 grid sm:grid-cols-2 gap-6">
               <Block title="Mandate" body="Member, Osun State House of Assembly representing Ife Central Constituency (Iremo, Ilare, Moore)." />
+              <Block title="Committee" body="Chairman, House Committee on Youth, Sports and Special Needs — Osun State House of Assembly." />
               <Block title="Sworn in" body="6 June 2023, following a decisive victory at the 2023 general elections." />
               <Block title="Profession" body="Engineer by training — bringing problem-solving and discipline into governance." />
               <Block title="Party" body="Now contesting under the Accord Party. Formerly PDP." />
+              <Block title="Pillars" body="Education · Healthcare · Welfare Infrastructure · Security · SME Support." />
             </div>
           </div>
 
