@@ -39,6 +39,29 @@ function Manifesto() {
 
       <Section title="Current Manifesto" eyebrow="2027 · Accord Party" items={current} accent />
       <Section title="Previous Manifesto" eyebrow="2023 · As contested under PDP" items={previous} />
+
+      {/* Pillar shift narrative */}
+      <section className="border-y border-dashed border-border bg-tint-sun">
+        <div className="container-edge py-20 md:py-28 grid md:grid-cols-12 gap-10">
+          <div className="md:col-span-5">
+            <p className="eyebrow">The shift</p>
+            <h2 className="mt-3 display text-3xl md:text-5xl font-semibold text-balance">
+              Same compass. Sharper map.
+            </h2>
+          </div>
+          <div className="md:col-span-7 space-y-5 text-foreground/80 leading-relaxed">
+            <p>
+              The original 2023 manifesto stood on five pillars: <strong>Education, Healthcare, Social & Welfare Infrastructure, Security,</strong> and <strong>Small & Medium Scale Business Support</strong>. Two years in office have shown which of these doors the people of Ife Central knock on hardest — and where the work has had to grow new branches.
+            </p>
+            <p>
+              Out of the SME and Welfare pillars, a sixth priority has emerged organically: <strong>Youth, Sports & Special Needs</strong> — a portfolio Hon. Awoyeye now chairs at the State Assembly. What began as empowerment grants has become tournaments, athlete stipends and inclusion programmes for persons with disabilities.
+            </p>
+            <p>
+              The next term keeps the original five pillars intact and adds this lived-experience sixth, so that the manifesto continues to be written by the constituency, not just for it.
+            </p>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
