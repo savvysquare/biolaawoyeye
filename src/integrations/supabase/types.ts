@@ -55,6 +55,7 @@ export type Database = {
           id: string
           image_url: string | null
           location: string | null
+          media: Json
           sort_order: number
           title: string
           updated_at: string
@@ -67,6 +68,7 @@ export type Database = {
           id?: string
           image_url?: string | null
           location?: string | null
+          media?: Json
           sort_order?: number
           title: string
           updated_at?: string
@@ -79,6 +81,7 @@ export type Database = {
           id?: string
           image_url?: string | null
           location?: string | null
+          media?: Json
           sort_order?: number
           title?: string
           updated_at?: string
