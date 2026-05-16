@@ -22,61 +22,66 @@ export function SiteHeader() {
 
   return (
     <header
-      className={`sticky top-0 z-50 transition-all ${
+      className={`sticky top-0 z-50 transition-all py-6 ${
         scrolled
-          ? "bg-background/90 backdrop-blur-md border-b border-dashed border-border"
-          : "bg-background border-b border-transparent"
+          ? "bg-background/80 backdrop-blur-xl border-b border-border/50"
+          : "bg-background/0"
       }`}
     >
-      <div className="container-edge flex h-24 items-center justify-between">
-        <Link to="/" className="flex items-center gap-4 group">
-          <span className="relative grid h-12 w-12 place-items-center rounded-full bg-sun ring-2 ring-grass shadow-xl shadow-grass/10 group-hover:scale-105 transition-transform duration-500">
-            <span className="display text-xl font-black text-grass">A</span>
-          </span>
-          <span className="flex flex-col leading-none">
-            <span className="display text-xl md:text-2xl font-black tracking-tighter text-foreground uppercase">Hon. Abiola Awoyeye</span>
-            <span className="text-[10px] font-black tracking-[0.2em] text-foreground/40 uppercase mt-1">Constituency Report</span>
-          </span>
+      <div className="container-edge flex items-center justify-between">
+        <Link to="/" className="flex items-center gap-3 group">
+          <div className="h-10 w-10 rounded-xl bg-grass grid place-items-center text-white font-bold text-lg shadow-lg shadow-grass/20 group-hover:rotate-12 transition-transform">
+            A
+          </div>
+          <div className="flex flex-col leading-none">
+            <span className="display text-lg font-bold tracking-tight">Hon. Abiola Awoyeye</span>
+            <span className="text-[10px] text-muted-foreground font-medium">Ife Central Representation</span>
+          </div>
         </Link>
 
-        <nav className="hidden md:flex items-center gap-8">
+        {/* Desktop Nav — Pill Styled */}
+        <nav className="hidden md:flex items-center bg-cream/50 backdrop-blur-sm border border-border/50 rounded-full px-2 py-1.5 gap-1">
           {nav.map((n) => (
             <Link
               key={n.to}
               to={n.to}
-              className="text-[11px] font-black tracking-[0.2em] text-foreground/40 hover:text-grass transition-colors uppercase"
-              activeProps={{ className: "text-grass" }}
+              className="text-[13px] font-semibold px-4 py-2 rounded-full text-muted-foreground hover:text-foreground hover:bg-background transition-all"
+              activeProps={{ className: "text-foreground bg-background shadow-sm" }}
               activeOptions={{ exact: n.to === "/" }}
             >
               {n.label}
             </Link>
           ))}
+        </nav>
+
+        <div className="hidden md:flex items-center gap-4">
           <Link
             to="/contact"
-            className="ml-4 inline-flex items-center rounded-full bg-grass px-6 py-2.5 text-xs font-black tracking-widest text-white hover:bg-ink hover:scale-105 transition-all uppercase"
+            className="pill-button bg-foreground text-background text-[13px] hover:scale-105"
           >
-            JOIN THE TEAM
+            Join the team
           </Link>
-        </nav>
+        </div>
 
         <button
           onClick={() => setOpen((o) => !o)}
-          className="md:hidden grid place-items-center h-12 w-12 rounded-full border border-border"
+          className="md:hidden grid place-items-center h-10 w-10 rounded-full bg-cream border border-border/50"
           aria-label="Toggle menu"
         >
-          {open ? <X size={24} /> : <Menu size={24} />}
+          {open ? <X size={20} /> : <Menu size={20} />}
         </button>
       </div>
 
+      {/* Mobile Nav — Clean Slide Down */}
       {open && (
-        <div className="md:hidden border-t border-dashed border-border bg-background animate-in slide-in-from-top-4 duration-300">
-          <div className="container-edge py-10 flex flex-col gap-6">
+        <div className="md:hidden absolute top-full left-0 w-full bg-background border-b border-border animate-in slide-in-from-top-4 duration-300">
+          <div className="container-edge py-8 flex flex-col gap-4">
             {nav.map((n) => (
               <Link
                 key={n.to}
                 to={n.to}
                 onClick={() => setOpen(false)}
-                className="text-2xl font-black uppercase tracking-tighter"
+                className="text-xl font-bold px-4 py-2 hover:text-grass transition-colors"
               >
                 {n.label}
               </Link>
@@ -84,9 +89,9 @@ export function SiteHeader() {
             <Link
               to="/contact"
               onClick={() => setOpen(false)}
-              className="mt-4 inline-flex items-center justify-center rounded-full bg-grass px-5 py-4 text-sm font-black text-white uppercase tracking-widest"
+              className="mt-4 pill-button bg-grass text-white py-4"
             >
-              JOIN THE TEAM
+              Join the team
             </Link>
           </div>
         </div>

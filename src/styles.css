@@ -1,4 +1,4 @@
-@import "tailwindcss" source(none);
+@import "tailwindcss";
 @source "../src";
 @import "tw-animate-css";
 
@@ -10,13 +10,14 @@
   --font-serif: "Instrument Serif", serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
 
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
-  --radius-2xl: calc(var(--radius) + 8px);
-  --radius-3xl: calc(var(--radius) + 12px);
-  --radius-4xl: calc(var(--radius) + 16px);
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-2xl: 24px;
+  --radius-3xl: 32px;
+  --radius-4xl: 48px;
+  --radius-pill: 9999px;
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -41,88 +42,47 @@
 
   --color-ink: var(--ink);
   --color-cream: var(--cream);
-  --color-flame: var(--flame);
-  --color-ember: var(--ember);
   --color-grass: var(--grass);
   --color-sun: var(--sun);
   --color-gold: var(--gold);
   --color-tint-sun: var(--tint-sun);
   --color-tint-grass: var(--tint-grass);
-
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
 }
 
 :root {
-  --radius: 0.75rem;
+  --radius: 1.5rem; /* Large Squircle corners */
 
-  /* Accord Party & Adeleke Aesthetic — yellow-dominant, grass green */
-  --background: oklch(0.99 0.01 95);               /* very soft cream background */
-  --foreground: oklch(0.12 0.02 150);             /* very deep dark green-ink for high contrast */
-  --ink: oklch(0.12 0.02 150);
-  --cream: oklch(1 0 0);
-  --grass: oklch(0.48 0.18 145);                  /* Accord Green */
-  --sun: oklch(0.88 0.19 100);                    /* Vibrant Yellow from Adeleke image */
-  --gold: oklch(0.78 0.22 80);                    /* Gold/Orange gradient tone */
-  --flame: oklch(0.55 0.22 28);                   /* Accord Red */
-  --ember: oklch(0.45 0.2 28);
-  --tint-sun: oklch(0.92 0.13 100);               /* block yellow */
-  --tint-grass: oklch(0.96 0.04 145);             /* soft grass tint */
+  /* Fourmula-inspired Palette with Accord Colors */
+  --background: #FFFFFF;
+  --foreground: #000000;
+  --ink: #000000;
+  --cream: #F8F8F8;
+  --grass: #008751; /* Accord Green */
+  --sun: #FFD700;   /* Accord Yellow/Gold */
+  --gold: #E5C100;
+  --tint-sun: #FFFBEB;
+  --tint-grass: #F0FDF4;
 
-  --card: oklch(1 0 0);
+  --card: #FFFFFF;
   --card-foreground: var(--foreground);
-  --popover: oklch(1 0 0);
+  --popover: #FFFFFF;
   --popover-foreground: var(--foreground);
 
-  --primary: var(--sun);
-  --primary-foreground: var(--ink);
+  --primary: var(--ink);
+  --primary-foreground: #FFFFFF;
 
-  --secondary: oklch(0.97 0.005 145);
-  --secondary-foreground: var(--foreground);
-  --muted: oklch(0.97 0.005 145);
-  --muted-foreground: oklch(0.4 0.02 150);
+  --secondary: #F4F4F5;
+  --secondary-foreground: #18181B;
+  --muted: #F4F4F5;
+  --muted-foreground: #71717A;
   --accent: var(--sun);
   --accent-foreground: var(--ink);
 
-  --destructive: var(--flame);
-  --destructive-foreground: oklch(1 0 0);
-  --border: oklch(0.92 0.005 145);
-  --input: oklch(0.92 0.005 145);
-  --ring: var(--grass);
-
-  --sidebar: var(--ink);
-  --sidebar-foreground: var(--cream);
-}
-
-.dark {
-  --background: oklch(0.16 0.02 60);
-  --foreground: oklch(0.97 0.01 80);
-  --card: oklch(0.22 0.02 60);
-  --card-foreground: oklch(0.97 0.01 80);
-  --popover: oklch(0.22 0.02 60);
-  --popover-foreground: oklch(0.97 0.01 80);
-  --primary: var(--flame);
-  --primary-foreground: oklch(0.16 0.02 60);
-  --secondary: oklch(0.26 0.02 60);
-  --secondary-foreground: oklch(0.97 0.01 80);
-  --muted: oklch(0.26 0.02 60);
-  --muted-foreground: oklch(0.7 0.02 70);
-  --accent: oklch(0.3 0.05 60);
-  --accent-foreground: oklch(0.97 0.01 80);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: var(--flame);
+  --destructive: #EF4444;
+  --destructive-foreground: #FFFFFF;
+  --border: #E4E4E7;
+  --input: #E4E4E7;
+  --ring: var(--ink);
 }
 
 @layer base {
@@ -134,12 +94,14 @@
     font-family: var(--font-sans);
     font-feature-settings: "ss01", "cv11";
     -webkit-font-smoothing: antialiased;
+    font-size: 16px;
+    line-height: 1.6;
   }
   h1, h2, h3, h4 {
     font-family: var(--font-display);
-    font-weight: 500;
-    letter-spacing: -0.02em;
-    line-height: 1.05;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
   }
 }
 
@@ -148,28 +110,40 @@
   .serif { font-family: var(--font-serif); }
   .eyebrow {
     font-family: var(--font-sans);
-    font-size: 0.72rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    font-weight: 500;
+    font-size: 13px;
+    letter-spacing: 0.05em;
+    font-weight: 600;
     color: var(--muted-foreground);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .eyebrow::before {
+    content: "";
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background-color: var(--color-grass);
+    border-radius: 9999px;
   }
   .container-edge { 
-    max-width: 1400px; 
+    max-width: 1200px; 
     margin-left: auto; 
     margin-right: auto; 
-    padding-left: clamp(1.25rem, 5vw, 5rem); 
-    padding-right: clamp(1.25rem, 5vw, 5rem); 
+    padding-left: 2rem; 
+    padding-right: 2rem; 
   }
   .text-balance { text-wrap: balance; }
   .no-scrollbar::-webkit-scrollbar { display: none; }
   .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
   
-  /* Crescent-style hairline grid frame */
-  .hair-frame {
-    border-top: 1px dashed var(--border);
-    border-bottom: 1px dashed var(--border);
+  .pill-button {
+    @apply inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-bold transition-all;
   }
-  .hair-cell { border-right: 1px dashed var(--border); }
-  .hair-cell:last-child { border-right: 0; }
+  .pill-button-primary {
+    @apply bg-foreground text-background hover:opacity-90;
+  }
+  .pill-button-secondary {
+    @apply border border-border bg-background text-foreground hover:bg-muted;
+  }
 }

@@ -17,38 +17,41 @@ function Contact() {
   const [sent, setSent] = useState(false);
   return (
     <div className="bg-background selection:bg-sun selection:text-ink">
-      {/* Editorial Header — Contact */}
-      <section className="border-b border-dashed border-border">
-        <div className="container-edge py-16 md:py-24">
-          <p className="eyebrow text-grass font-bold tracking-[0.25em] mb-8">CONTACT THE OFFICE</p>
-          <h1 className="display font-black text-[clamp(2.5rem,7vw,6.5rem)] leading-[0.9] text-balance uppercase max-w-4xl">
-            Talk to the office. <span className="text-grass italic">Join the movement.</span>
+      {/* Hero — Contact */}
+      <section className="relative pt-32 pb-20 overflow-hidden">
+        <div className="container-edge text-center flex flex-col items-center">
+          <div className="eyebrow mb-8">Get in touch</div>
+          <h1 className="display text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-foreground leading-[1] max-w-5xl mb-10">
+            Talk to the office. Join the movement.
           </h1>
-          <p className="mt-10 max-w-2xl text-lg md:text-2xl text-foreground/70 leading-relaxed font-medium">
-            Wards, polling units, mobilisation, comms, data — there is a role for every willing hand. Reach out today.
+          <p className="max-w-2xl text-lg md:text-xl text-muted-foreground leading-relaxed">
+            Wards, polling units, mobilisation, comms, data — there is a role for every willing hand. 
+            Reach out today to become part of the progress.
           </p>
         </div>
       </section>
 
-      <section className="border-b border-dashed border-border">
-        <div className="container-edge grid lg:grid-cols-12">
+      <section className="py-24 border-t border-border">
+        <div className="container-edge grid lg:grid-cols-12 gap-16">
           {/* Info Column */}
-          <div className="lg:col-span-4 py-20 md:py-28 lg:pr-12 md:border-r border-dashed border-border space-y-12">
-            <Info icon={<MapPin size={24} />} title="Constituency Office" body="Ife Central · Osun State, Nigeria" />
-            <Info icon={<Mail size={24} />} title="Email" body="office@awoyeye.ng" />
-            <Info icon={<Phone size={24} />} title="Phone" body="Available on request" />
+          <div className="lg:col-span-5 space-y-12">
+            <div className="space-y-8">
+              <Info icon={<MapPin size={24} />} title="Constituency Office" body="Ife Central · Osun State, Nigeria" />
+              <Info icon={<Mail size={24} />} title="Email address" body="office@awoyeye.ng" />
+              <Info icon={<Phone size={24} />} title="Phone number" body="Available on request" />
+            </div>
 
-            <div className="bg-ink p-10 rounded-3xl text-cream">
-              <p className="eyebrow text-sun mb-6 uppercase tracking-widest">Volunteer</p>
-              <h3 className="display text-3xl font-black uppercase leading-tight">Power to the People is a team sport.</h3>
-              <p className="mt-6 text-cream/60 leading-relaxed font-medium">
-                Every ward and polling unit needs a voice. Join the campaign and help shape the future.
+            <div className="bg-grass p-10 rounded-[3rem] text-white shadow-2xl shadow-grass/20">
+              <div className="h-2 w-12 bg-white/20 rounded-full mb-8" />
+              <h3 className="display text-3xl font-bold mb-6">Power to the people is a team sport.</h3>
+              <p className="text-white/70 leading-relaxed font-medium">
+                Every ward and polling unit needs a voice. Join the campaign and help shape the future of Ife Central.
               </p>
             </div>
           </div>
 
-          {/* Form Column */}
-          <div className="lg:col-span-8 py-20 md:py-28 lg:pl-16">
+          {/* Form Column — Clean & Modern */}
+          <div className="lg:col-span-7">
             <form
               onSubmit={(e) => {
                 e.preventDefault();
@@ -56,16 +59,16 @@ function Contact() {
                 setSent(true);
                 (e.target as HTMLFormElement).reset();
               }}
-              className="grid gap-8"
+              className="bg-cream p-10 md:p-14 rounded-[3rem] border border-border/50 grid gap-8"
             >
               <div className="grid md:grid-cols-2 gap-8">
-                <Field label="Full name" name="name" required />
-                <Field label="Email address" name="email" type="email" required />
+                <Field label="Full name" name="name" placeholder="John Doe" required />
+                <Field label="Email address" name="email" type="email" placeholder="john@example.com" required />
               </div>
-              <Field label="Phone number (optional)" name="phone" />
+              <Field label="Phone number (optional)" name="phone" placeholder="+234..." />
               <div>
-                <label className="eyebrow text-foreground/40 mb-4 block uppercase tracking-widest">Reason for enquiry</label>
-                <select name="reason" className="w-full bg-background border-2 border-border p-5 text-lg font-bold focus:border-grass focus:outline-none appearance-none cursor-pointer">
+                <label className="text-xs font-bold text-muted-foreground uppercase tracking-widest mb-4 block">Reason for enquiry</label>
+                <select name="reason" className="w-full bg-background border border-border rounded-2xl p-5 text-sm font-bold focus:border-grass focus:outline-none appearance-none cursor-pointer">
                   <option>General enquiry</option>
                   <option>Volunteer</option>
                   <option>Press</option>
@@ -73,20 +76,20 @@ function Contact() {
                 </select>
               </div>
               <div>
-                <label className="eyebrow text-foreground/40 mb-4 block uppercase tracking-widest">Message</label>
+                <label className="text-xs font-bold text-muted-foreground uppercase tracking-widest mb-4 block">Message</label>
                 <textarea
                   name="message"
                   required
                   rows={6}
-                  className="w-full bg-background border-2 border-border p-5 text-lg font-medium focus:border-grass focus:outline-none resize-none"
+                  className="w-full bg-background border border-border rounded-2xl p-5 text-sm font-medium focus:border-grass focus:outline-none resize-none"
                   placeholder="How can we help?"
                 />
               </div>
               <button
                 type="submit"
-                className="w-full md:w-auto inline-flex items-center justify-center gap-3 rounded-full bg-grass px-12 py-5 text-xl font-bold text-white shadow-2xl shadow-grass/30 hover:scale-105 transition uppercase"
+                className="pill-button bg-grass text-white py-5 text-lg hover:scale-105"
               >
-                {sent ? "MESSAGE SENT" : "SEND MESSAGE"}
+                {sent ? "Message sent" : "Send message"}
               </button>
             </form>
           </div>
@@ -98,11 +101,13 @@ function Contact() {
 
 function Info({ icon, title, body }: { icon: React.ReactNode; title: string; body: string }) {
   return (
-    <div className="flex gap-6">
-      <span className="grid h-14 w-14 place-items-center rounded-full bg-tint-sun text-grass shrink-0">{icon}</span>
+    <div className="flex gap-6 items-center">
+      <div className="h-14 w-14 rounded-2xl bg-cream border border-border/50 grid place-items-center text-grass shrink-0">
+        {icon}
+      </div>
       <div>
-        <p className="eyebrow text-foreground/40 mb-2 uppercase tracking-widest">{title}</p>
-        <p className="text-xl font-black uppercase">{body}</p>
+        <p className="text-xs font-bold text-muted-foreground uppercase tracking-widest mb-1">{title}</p>
+        <p className="text-lg font-bold">{body}</p>
       </div>
     </div>
   );
@@ -111,10 +116,10 @@ function Info({ icon, title, body }: { icon: React.ReactNode; title: string; bod
 function Field({ label, ...rest }: { label: string } & React.InputHTMLAttributes<HTMLInputElement>) {
   return (
     <div className="w-full">
-      <label className="eyebrow text-foreground/40 mb-4 block uppercase tracking-widest">{label}</label>
+      <label className="text-xs font-bold text-muted-foreground uppercase tracking-widest mb-4 block">{label}</label>
       <input
         {...rest}
-        className="w-full bg-background border-2 border-border p-5 text-lg font-bold focus:border-grass focus:outline-none"
+        className="w-full bg-background border border-border rounded-2xl p-5 text-sm font-bold focus:border-grass focus:outline-none"
       />
     </div>
   );

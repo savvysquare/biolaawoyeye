@@ -52,39 +52,68 @@ function About() {
              </div>
           </div>
         </div>
-      </section>
-
-      {/* Grid Content — Mandate Blocks */}
-      <section className="border-b border-dashed border-border">
-        <div className="container-edge grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-border border-x border-dashed border-border">
-          <Block title="Mandate" body="Member, Osun State House of Assembly representing Ife Central Constituency (Iremo, Ilare, Moore)." />
-          <Block title="Committee" body="Chairman, House Committee on Youth, Sports and Special Needs — Osun State House of Assembly." />
-          <Block title="Sworn in" body="6 June 2023, following a decisive victory at the 2023 general elections." />
-          <Block title="Profession" body="Engineer by training — bringing problem-solving and discipline into governance." />
-          <Block title="Party" body="Now contesting under the Accord Party. Formerly PDP." />
-          <Block title="Pillars" body="Education · Healthcare · Welfare Infrastructure · Security · SME Support." />
+          <div className="lg:col-span-7 space-y-10">
+            <div className="space-y-6 text-lg text-muted-foreground leading-relaxed font-medium">
+              <p>
+                Hon. Engr. Abiola Jeremiah Awoyeye is a dedicated public servant and legislative leader committed to the total transformation of Ife Central. With a background in engineering, he brings a problem-solving mindset to the state legislature.
+              </p>
+              <p>
+                Since June 2023, he has prioritized infrastructure, social welfare, and youth empowerment, delivering over 35 major projects across the constituency.
+              </p>
+            </div>
+            
+            <div className="grid sm:grid-cols-2 gap-6">
+               <div className="bg-cream p-8 rounded-[2rem] border border-border/50">
+                  <p className="text-grass font-bold mb-3">Legislative Role</p>
+                  <p className="text-sm font-medium text-muted-foreground">Member, Osun State House of Assembly representing Ife Central Constituency.</p>
+               </div>
+               <div className="bg-cream p-8 rounded-[2rem] border border-border/50">
+                  <p className="text-grass font-bold mb-3">Committee Leadership</p>
+                  <p className="text-sm font-medium text-muted-foreground">Chairman, House Committee on Youth, Sports, and Special Needs.</p>
+               </div>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* Timeline — Dark Editorial Style */}
-      <section className="bg-ink text-cream border-t border-dashed border-border">
-        <div className="container-edge py-24">
-          <div className="grid lg:grid-cols-12 gap-12 items-end mb-20">
-            <div className="lg:col-span-8">
-              <p className="eyebrow text-sun mb-6 uppercase">Timeline</p>
-              <h2 className="display text-5xl md:text-7xl font-black uppercase leading-none">From mandate to milestones.</h2>
+      {/* Mandate Blocks — Refined Squircle Grid */}
+      <section className="py-24 bg-cream/50 border-y border-border">
+        <div className="container-edge">
+          <div className="max-w-2xl mb-16">
+            <div className="eyebrow mb-6">Legislative Mandate</div>
+            <h2 className="display text-4xl md:text-5xl font-bold">The five pillars of progress.</h2>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <Block title="Education" body="Facilitating school renovations, providing scholarships, and ensuring qualitative learning for every child." />
+            <Block title="Healthcare" body="Rehabilitating primary health centers and facilitating outreach programs to improve constituency well-being." />
+            <Block title="Infrastructure" body="Restoring water systems, facilitating road grading, and improving public facilities in all eleven wards." />
+            <Block title="Security" body="Partnering with local agencies and facilitating equipment support to keep our communities safe." />
+            <Block title="SME Support" body="Providing grants and vocational equipment to local artisans and small business owners to drive prosperity." />
+            <div className="bg-grass text-white p-10 rounded-[2.5rem] flex flex-col justify-center">
+               <p className="text-lg font-bold mb-4 italic">“We are writing a new story for Ife Central, one project at a time.”</p>
+               <Link to="/contact" className="text-sm font-bold underline underline-offset-4 decoration-white/30 hover:decoration-white transition-all">Join the team</Link>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Timeline — Clean Minimal List */}
+      <section className="py-24">
+        <div className="container-edge">
+          <div className="max-w-2xl mb-16">
+            <div className="eyebrow mb-6">Timeline</div>
+            <h2 className="display text-4xl md:text-5xl font-bold">From mandate to milestones.</h2>
+          </div>
           
-          <div className="grid gap-px bg-cream/10 border border-cream/10">
+          <div className="space-y-12">
             {timeline.map(([year, label, body]) => (
-              <div key={year + label} className="bg-ink grid md:grid-cols-12 gap-8 p-10 md:p-14 hover:bg-cream/[0.02] transition-colors">
+              <div key={year + label} className="grid md:grid-cols-12 gap-8 items-start group">
                 <div className="md:col-span-3">
-                  <p className="display text-5xl md:text-6xl font-black text-sun">{year}</p>
-                  <p className="eyebrow text-cream/40 mt-4 uppercase tracking-widest">{label}</p>
+                  <p className="display text-4xl font-bold text-grass mb-2 group-hover:translate-x-2 transition-transform">{year}</p>
+                  <p className="text-xs font-bold text-muted-foreground uppercase tracking-widest">{label}</p>
                 </div>
-                <div className="md:col-span-9 flex items-center">
-                  <p className="text-xl md:text-2xl text-cream/80 leading-relaxed font-medium">{body}</p>
+                <div className="md:col-span-9 pt-2">
+                  <p className="text-lg md:text-xl text-muted-foreground font-medium leading-relaxed">{body}</p>
                 </div>
               </div>
             ))}
@@ -97,9 +126,10 @@ function About() {
 
 function Block({ title, body }: { title: string; body: string }) {
   return (
-    <div className="bg-background p-10 hover:bg-tint-sun/10 transition-colors">
-      <p className="eyebrow text-grass mb-6 uppercase font-bold tracking-widest">{title}</p>
-      <p className="text-lg md:text-xl text-foreground/80 leading-relaxed font-medium">{body}</p>
+    <div className="bg-background p-10 rounded-[2.5rem] border border-border hover:shadow-xl transition-all duration-500">
+      <div className="h-2 w-10 bg-grass/20 rounded-full mb-8" />
+      <h3 className="display text-2xl font-bold mb-4">{title}</h3>
+      <p className="text-sm md:text-base text-muted-foreground font-medium leading-relaxed">{body}</p>
     </div>
   );
 }
