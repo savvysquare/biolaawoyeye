@@ -105,7 +105,7 @@ function Home() {
             <p className="eyebrow mt-4">In their own words</p>
           </div>
           <blockquote className="md:col-span-9">
-            <p className="display text-2xl md:text-4xl leading-[1.2] font-medium text-balance">
+            <p className="serif text-4xl md:text-6xl leading-[1.1] font-medium text-balance text-foreground italic">
               “Water that hadn't run in twenty years came back in three weeks. We don't have to walk to the next ward anymore.”
             </p>
             <footer className="mt-6 flex items-center gap-3 text-sm">
