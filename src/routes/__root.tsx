@@ -9,6 +9,9 @@ import {
 } from "@tanstack/react-router";
 
 import appCss from "../styles.css?url";
+import { SiteHeader } from "@/components/SiteHeader";
+import { SiteFooter } from "@/components/SiteFooter";
+import { Toaster } from "sonner";
 
 function NotFoundComponent() {
   return (
@@ -72,14 +75,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Hon. Abiola Jeremiah Awoyeye — Ife Central, Osun State" },
+      { name: "description", content: "Official site of Hon. Engr. Abiola Jeremiah Awoyeye, Member representing Ife Central at the Osun State House of Assembly. Accord Party." },
+      { name: "author", content: "Hon. Abiola Jeremiah Awoyeye" },
+      { property: "og:title", content: "Hon. Abiola Jeremiah Awoyeye — Ife Central" },
+      { property: "og:description", content: "Two years in. 35 completed projects. Power to the people." },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
       {
@@ -113,7 +115,14 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <Outlet />
+      <div className="min-h-screen flex flex-col">
+        <SiteHeader />
+        <main className="flex-1">
+          <Outlet />
+        </main>
+        <SiteFooter />
+      </div>
+      <Toaster richColors position="top-center" />
     </QueryClientProvider>
   );
 }
