@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
 import portrait from "@/assets/hero-portrait.jpg";
@@ -34,24 +34,29 @@ function About() {
 
   return (
     <div className="bg-background selection:bg-sun selection:text-ink">
-      {/* Editorial Header — About */}
-      <section className="border-b border-dashed border-border">
-        <div className="container-edge grid lg:grid-cols-12 min-h-[60vh]">
-          <div className="lg:col-span-8 py-16 md:py-24 lg:pr-16 flex flex-col justify-center border-r border-dashed border-border">
-            <p className="eyebrow text-grass font-bold tracking-[0.25em] mb-8">ABOUT THE HONOURABLE</p>
-            <h1 className="display font-black text-[clamp(2.8rem,7vw,6rem)] leading-[0.9] text-balance uppercase mb-10">
-              Rebuilding Ife Central, ward by ward.
-            </h1>
-            <div className="max-w-2xl text-lg md:text-xl text-foreground/70 leading-relaxed font-medium">
-              <p>{c.about_body}</p>
-            </div>
-          </div>
-          <div className="lg:col-span-4 bg-tint-sun/30 flex items-center justify-center p-8 md:p-12">
-             <div className="relative aspect-[3/4] w-full overflow-hidden rounded-3xl shadow-2xl ring-1 ring-border">
-               <img src={portrait} alt="Hon. Abiola Awoyeye" className="h-full w-full object-cover grayscale" />
+      {/* Refined Hero — About */}
+      <section className="relative pt-32 pb-20 overflow-hidden">
+        <div className="container-edge text-center flex flex-col items-center">
+          <div className="eyebrow mb-8">Hon. Abiola Jeremiah Awoyeye</div>
+          <h1 className="display text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-foreground leading-[1] max-w-5xl mb-10">
+            A vision for a restored constituency.
+          </h1>
+          <p className="max-w-2xl text-lg md:text-xl text-muted-foreground leading-relaxed animate-in fade-in slide-in-from-bottom-6 duration-1000">
+            Representing the people of Ife Central at the Osun State House of Assembly. 
+            Chairman of the House Committee on Youth, Sports, and Special Needs.
+          </p>
+        </div>
+      </section>
+
+      {/* Narrative Section — Two column refined split */}
+      <section className="py-24 border-t border-border">
+        <div className="container-edge grid lg:grid-cols-12 gap-16 items-center">
+          <div className="lg:col-span-5 relative">
+             <div className="absolute -inset-4 bg-grass/5 blur-3xl rounded-full -z-10" />
+             <div className="aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl border border-border">
+                <img src={portrait} alt="Portrait" className="h-full w-full object-cover grayscale hover:grayscale-0 transition-all duration-1000" />
              </div>
           </div>
-        </div>
           <div className="lg:col-span-7 space-y-10">
             <div className="space-y-6 text-lg text-muted-foreground leading-relaxed font-medium">
               <p>
