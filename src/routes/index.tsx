@@ -85,7 +85,7 @@ function Home() {
             {[
               { v: c.stat_projects ?? "35+", l: "Completed projects" },
               { v: c.stat_wards ?? "11", l: "Wards reached" },
-              { v: c.stat_years ?? "2", l: "Years in office" },
+              { v: c.stat_years ?? "3", l: "Years in office" },
               { v: c.stat_communities ?? "20+", l: "Communities served" },
             ].map((s) => (
               <div key={s.l} className="flex flex-col text-center">
@@ -171,7 +171,7 @@ function Home() {
             </h2>
             <p className="text-lg text-muted-foreground font-medium">
               The 2023 manifesto wasn't just a list of promises; it was a blueprint for restoration. 
-              In twenty-four months, we have moved from strategic planning to concrete results across all eleven wards of Ife Central.
+              In thirty-six months, we have moved from strategic planning to concrete results across all eleven wards of Ife Central.
             </p>
           </div>
           <div className="lg:col-span-6">
