@@ -26,7 +26,19 @@ function Manifesto() {
   });
 
   const items = useMemo(() => {
-    const mapped = rawItems.map(it => ({
+    const injectedItems = [
+      ...rawItems,
+      {
+        id: "temp-school-rehab",
+        title: "Comprehensive School Rehabilitation",
+        description: "Complete structural rehabilitation and modernization of public primary and secondary schools across Ife Central to create safe and conducive learning environments.",
+        category: "Education",
+        term: "current",
+        sort_order: 1
+      }
+    ];
+
+    const mapped = injectedItems.map(it => ({
       ...it,
       category: mapToPillar(it.category)
     }));
