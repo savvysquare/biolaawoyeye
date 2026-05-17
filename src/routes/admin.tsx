@@ -236,10 +236,17 @@ function ProjectsEditor() {
 }
 
 function ProjectRow({ project, onChange }: { project: Project; onChange: () => void }) {
-  const [p, setP] = useState<Project>({ ...project, media: project.media ?? [] });
+  const resolvedMedia = project.media && project.media.length > 0
+    ? project.media
+    : [{ type: "image" as const, url: `/projects/${project.sort_order}.webp` }];
+
+  const [p, setP] = useState<Project>({ ...project, media: resolvedMedia });
   const [uploading, setUploading] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
-  useEffect(() => setP({ ...project, media: project.media ?? [] }), [project]);
+  
+  useEffect(() => {
+    setP({ ...project, media: resolvedMedia });
+  }, [project, resolvedMedia]);
 
   async function save() {
     const { error } = await supabase.from("projects").update({
