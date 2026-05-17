@@ -185,6 +185,32 @@ function ProjectsEditor() {
     if (error) toast.error(error.message);
     else { toast.success("Added"); refresh(); }
   }
+
+  async function normalizeCategories() {
+    if (!confirm("This will update all projects with legacy categories to the 5 main pillars in the backend. Proceed?")) return;
+    
+    let updated = 0;
+    for (const p of data) {
+      const c = p.category;
+      let newCat = p.category;
+      
+      if (['Water & Sanitation', 'Electricity', 'Roads & Infrastructure'].includes(c)) newCat = 'Infrastructure';
+      else if (['Economic Empowerment', 'Welfare'].includes(c)) newCat = 'SME Support';
+      else if (c === 'Education') newCat = 'Education';
+      else if (c === 'Healthcare') newCat = 'Healthcare';
+      else if (c === 'Security') newCat = 'Security';
+      else if (c === 'Infrastructure') newCat = 'Infrastructure';
+      else newCat = 'Infrastructure'; // Fallback
+      
+      if (newCat !== p.category) {
+        const { error } = await supabase.from('projects').update({ category: newCat }).eq('id', p.id);
+        if (!error) updated++;
+      }
+    }
+    toast.success(`Normalized ${updated} project categories.`);
+    refresh();
+  }
+
   function refresh() {
     qc.invalidateQueries({ queryKey: ["projects_admin"] });
     qc.invalidateQueries({ queryKey: ["projects"] });
@@ -192,9 +218,14 @@ function ProjectsEditor() {
 
   return (
     <div className="space-y-4">
-      <button onClick={add} className="inline-flex items-center gap-2 rounded-full bg-foreground text-background px-5 py-2.5 text-sm">
-        <Plus size={14} /> Add project
-      </button>
+      <div className="flex gap-2">
+        <button onClick={add} className="inline-flex items-center gap-2 rounded-full bg-foreground text-background px-5 py-2.5 text-sm">
+          <Plus size={14} /> Add project
+        </button>
+        <button onClick={normalizeCategories} className="inline-flex items-center gap-2 rounded-full border border-border px-5 py-2.5 text-sm hover:border-foreground">
+          Normalize Categories
+        </button>
+      </div>
       <div className="grid lg:grid-cols-2 gap-4">
         {data.map((p) => (
           <ProjectRow key={p.id} project={p} onChange={refresh} />
