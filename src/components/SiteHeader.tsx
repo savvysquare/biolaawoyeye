@@ -34,7 +34,7 @@ export function SiteHeader() {
             A
           </div>
           <div className="flex flex-col leading-none">
-            <span className="display text-lg font-bold tracking-tight">Hon. Abiola Awoyeye</span>
+            <span className="display text-lg font-bold tracking-tight">Hon. Abiola J. Awoyeye</span>
             <span className="text-[10px] text-muted-foreground font-medium uppercase tracking-wider">Ife Central Member, OSHA</span>
           </div>
         </Link>
