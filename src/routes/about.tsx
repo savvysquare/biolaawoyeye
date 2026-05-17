@@ -54,7 +54,7 @@ function About() {
           <div className="lg:col-span-5 relative">
              <div className="absolute -inset-4 bg-grass/5 blur-3xl rounded-full -z-10" />
              <div className="aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl border border-border">
-                <img src={portrait} alt="Portrait" className="h-full w-full object-cover grayscale hover:grayscale-0 transition-all duration-1000" />
+                <img src={portrait} alt="Portrait" className="h-full w-full object-cover md:grayscale md:hover:grayscale-0 transition-all duration-1000" />
              </div>
           </div>
           <div className="lg:col-span-7 space-y-10">

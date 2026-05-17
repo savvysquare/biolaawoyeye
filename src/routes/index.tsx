@@ -87,7 +87,7 @@ function Home() {
           <div className="mt-20 relative w-full max-w-5xl">
             <div className="absolute -inset-10 bg-sun/10 blur-[120px] rounded-full -z-10" />
             <div className="relative aspect-[4/3] md:aspect-[3/2] rounded-[2.5rem] overflow-hidden shadow-2xl border border-border bg-muted">
-               <img src={ife} alt="Ife Central" className="h-full w-full object-cover object-top grayscale hover:grayscale-0 transition-all duration-1000" />
+               <img src={ife} alt="Ife Central" className="h-full w-full object-cover object-top md:grayscale md:hover:grayscale-0 transition-all duration-1000" />
             </div>
           </div>
         </div>
