@@ -84,8 +84,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Hon. Abiola Jeremiah Awoyeye — Ife Central, Osun State" },
       { name: "twitter:description", content: "Official site of Hon. Engr. Abiola Jeremiah Awoyeye, Member representing Ife Central at the Osun State House of Assembly. Accord Party." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/e2802f56-871a-4836-84ee-9ab6a90ecae9/id-preview-0641eff7--74759571-92a6-4510-a446-aaa151529729.lovable.app-1778938412165.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/e2802f56-871a-4836-84ee-9ab6a90ecae9/id-preview-0641eff7--74759571-92a6-4510-a446-aaa151529729.lovable.app-1778938412165.png" },
+      { property: "og:image", content: "/og-image.webp" },
+      { name: "twitter:image", content: "/og-image.webp" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
