@@ -65,14 +65,14 @@ function Home() {
           </div>
           <h1 className="display text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-foreground leading-[1] max-w-5xl mb-8 grid animate-in fade-in slide-in-from-bottom-4 duration-700">
             <span className={`col-start-1 row-start-1 transition-opacity duration-1000 ${altTitle ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
-              From neglect to 37 projects.
+              From neglect to 37+ projects.
             </span>
             <span className={`col-start-1 row-start-1 transition-opacity duration-1000 ${altTitle ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
               Power restored to the People.
             </span>
           </h1>
           <p className="max-w-2xl text-lg md:text-xl text-muted-foreground leading-relaxed mb-12 animate-in fade-in slide-in-from-bottom-6 duration-1000">
-            {c.hero_subtitle ?? "Hon. Engr. Abiola Jeremiah Awoyeye is turning the manifesto into progress for Ife Central."}
+            Hon. Engr. Abiola Jeremiah Awoyeye — Member representing Ife Central State Constituency at the Osun State House of Assembly. Three years in. 37 completed projects. One promise kept: service.
           </p>
           <div className="flex flex-wrap justify-center gap-4 animate-in fade-in slide-in-from-bottom-8 duration-1000">
             <Link to="/works" className="pill-button pill-button-primary bg-grass text-white shadow-xl shadow-grass/20 px-8 py-4 rounded-full font-bold inline-flex items-center">
