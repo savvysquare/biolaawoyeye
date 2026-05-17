@@ -48,7 +48,8 @@ function Home() {
   const projects = useMemo(() => {
     return rawProjects.map(p => ({
       ...p,
-      category: mapToPillar(p.category)
+      category: mapToPillar(p.category),
+      media: [{ type: "image", url: `/projects/${p.sort_order}.webp` }]
     }));
   }, [rawProjects]);
 
