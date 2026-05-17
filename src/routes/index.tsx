@@ -11,7 +11,7 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Hon. Abiola Jeremiah Awoyeye — Power to the People" },
-      { name: "description", content: "Member, Osun State House of Assembly, Ife Central State Constituency. 35+ completed projects since 2023. Now on the Accord Party platform." },
+      { name: "description", content: "Member, Osun State House of Assembly, Ife Central State Constituency. 37 completed projects since 2023. Now on the Accord Party platform." },
     ],
   }),
   component: Home,
@@ -65,7 +65,7 @@ function Home() {
           </div>
           <h1 className="display text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-foreground leading-[1] max-w-5xl mb-8 grid animate-in fade-in slide-in-from-bottom-4 duration-700">
             <span className={`col-start-1 row-start-1 transition-opacity duration-1000 ${altTitle ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
-              From neglect to 35+ projects.
+              From neglect to 37 projects.
             </span>
             <span className={`col-start-1 row-start-1 transition-opacity duration-1000 ${altTitle ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
               Power restored to the People.
@@ -98,7 +98,7 @@ function Home() {
         <div className="container-edge">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { v: c.stat_projects ?? "35+", l: "Completed projects" },
+              { v: c.stat_projects ?? "37", l: "Completed projects" },
               { v: c.stat_wards ?? "11", l: "Wards reached" },
               { v: "3", l: "Years in office" },
               { v: c.stat_communities ?? "20+", l: "Communities served" },
@@ -193,7 +193,7 @@ function Home() {
             <div className="aspect-square bg-tint-sun rounded-[3rem] p-12 relative overflow-hidden flex items-center justify-center">
               <div className="absolute top-0 right-0 w-64 h-64 bg-sun/20 blur-[80px] rounded-full" />
               <div className="relative text-center">
-                <p className="display text-8xl font-bold text-sun mb-4">35+</p>
+                <p className="display text-8xl font-bold text-sun mb-4">37</p>
                 <p className="text-sm font-bold uppercase tracking-[0.2em] text-foreground/40">Projects delivered</p>
               </div>
             </div>

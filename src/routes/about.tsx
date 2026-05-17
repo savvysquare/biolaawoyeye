@@ -63,7 +63,7 @@ function About() {
                 Hon. Engr. Abiola Jeremiah Awoyeye is a dedicated public servant and legislative leader committed to the total transformation of Ife Central. With a background in engineering, he brings a problem-solving mindset to the state legislature.
               </p>
               <p>
-                Since June 2023, he has prioritized infrastructure, social welfare, and youth empowerment, delivering over 35 major projects across the constituency.
+                Since June 2023, he has prioritized infrastructure, social welfare, and youth empowerment, delivering 37 major projects across the constituency.
               </p>
             </div>
             
