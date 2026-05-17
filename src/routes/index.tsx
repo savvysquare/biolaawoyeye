@@ -125,7 +125,7 @@ function Home() {
             <footer className="flex flex-col items-center gap-4">
               <div className="h-14 w-14 rounded-full bg-sun grid place-items-center font-bold text-ink shadow-lg">MA</div>
               <div className="text-center">
-                <p className="font-bold text-lg">Mama Adérónke</p>
+                <p className="font-bold text-lg">Mama Aderonke</p>
                 <p className="text-sm text-muted-foreground font-medium uppercase tracking-wider">OAU Junior Staff Quarters</p>
               </div>
             </footer>
