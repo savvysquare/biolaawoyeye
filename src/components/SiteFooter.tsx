@@ -59,7 +59,7 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <div className="mt-20 pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4 text-[11px] font-medium text-muted-foreground uppercase tracking-widest">
+        <div className="mt-20 pt-8 border-t border-border flex flex-col items-center justify-center text-center gap-2 text-[11px] font-medium text-muted-foreground uppercase tracking-widest">
           <p>© {new Date().getFullYear()} Hon. Engr. Abiola Jeremiah Awoyeye</p>
           <p>Powered by Hon. Abiola J. Awoyeye • Ife Central</p>
         </div>
