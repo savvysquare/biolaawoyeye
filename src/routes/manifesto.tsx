@@ -26,10 +26,28 @@ function Manifesto() {
   });
 
   const items = useMemo(() => {
-    return rawItems.map(it => ({
+    const mapped = rawItems.map(it => ({
       ...it,
       category: mapToPillar(it.category)
     }));
+
+    const getSortScore = (cat: string) => {
+      switch(cat) {
+        case 'Education': return 1;
+        case 'Healthcare': return 2;
+        case 'Infrastructure': return 3;
+        case 'Security': return 4;
+        case 'SME Support': return 5;
+        default: return 6;
+      }
+    };
+
+    return mapped.sort((a, b) => {
+      const scoreA = getSortScore(a.category);
+      const scoreB = getSortScore(b.category);
+      if (scoreA !== scoreB) return scoreA - scoreB;
+      return a.sort_order - b.sort_order;
+    });
   }, [rawItems]);
 
   const current = items.filter((i) => i.term === "current");
