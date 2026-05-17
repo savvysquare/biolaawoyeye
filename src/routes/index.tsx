@@ -61,7 +61,7 @@ function Home() {
       <section className="relative pt-32 pb-20 overflow-hidden">
         <div className="container-edge text-center flex flex-col items-center">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-tint-grass text-grass border border-grass/10 text-xs font-bold mb-8 animate-in fade-in slide-in-from-bottom-2 duration-500">
-            {c.hero_eyebrow ?? "Constituency Report · Ife Central"}
+            Hon. Abiola J. Awoyeye · Ife Central
           </div>
           <h1 className="display text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-foreground leading-[1] max-w-5xl mb-8 grid animate-in fade-in slide-in-from-bottom-4 duration-700">
             <span className={`col-start-1 row-start-1 transition-opacity duration-1000 ${altTitle ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
@@ -136,7 +136,7 @@ function Home() {
       {/* Featured Works — Modern Cards */}
       <section className="py-32 bg-cream">
         <div className="container-edge">
-          <div className="flex flex-col md:flex-row justify-between items-end gap-8 mb-20">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-8 mb-20">
             <div className="max-w-xl">
               <div className="eyebrow mb-4">Portfolio of progress</div>
               <h2 className="display text-4xl md:text-5xl font-bold">From manifesto to concrete reality.</h2>
