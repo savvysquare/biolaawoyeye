@@ -99,7 +99,7 @@ function Home() {
             {[
               { v: c.stat_projects ?? "35+", l: "Completed projects" },
               { v: c.stat_wards ?? "11", l: "Wards reached" },
-              { v: c.stat_years ?? "3", l: "Years in office" },
+              { v: "3", l: "Years in office" },
               { v: c.stat_communities ?? "20+", l: "Communities served" },
             ].map((s) => (
               <div key={s.l} className="flex flex-col text-center">
