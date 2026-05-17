@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
-import { useMemo } from "react";
+import { useMemo, useState, useEffect } from "react";
 import { ArrowRight, Quote } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import type { Media } from "@/lib/media";
@@ -18,6 +18,15 @@ export const Route = createFileRoute("/")({
 });
 
 function Home() {
+  const [altTitle, setAltTitle] = useState(false);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setAltTitle((prev) => !prev);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
   const { data: c = {} } = useQuery({
     queryKey: ["site_content"],
     queryFn: async () => {
@@ -53,8 +62,13 @@ function Home() {
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-tint-grass text-grass border border-grass/10 text-xs font-bold mb-8 animate-in fade-in slide-in-from-bottom-2 duration-500">
             {c.hero_eyebrow ?? "Constituency Report · Ife Central"}
           </div>
-          <h1 className="display text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-foreground leading-[1] max-w-5xl mb-8 animate-in fade-in slide-in-from-bottom-4 duration-700">
-            {c.hero_title ?? "From neglect to 35+ projects."}
+          <h1 className="display text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-foreground leading-[1] max-w-5xl mb-8 grid animate-in fade-in slide-in-from-bottom-4 duration-700">
+            <span className={`col-start-1 row-start-1 transition-opacity duration-1000 ${altTitle ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
+              From neglect to 35+ projects.
+            </span>
+            <span className={`col-start-1 row-start-1 transition-opacity duration-1000 ${altTitle ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
+              Power restored to the People.
+            </span>
           </h1>
           <p className="max-w-2xl text-lg md:text-xl text-muted-foreground leading-relaxed mb-12 animate-in fade-in slide-in-from-bottom-6 duration-1000">
             {c.hero_subtitle ?? "Hon. Engr. Abiola Jeremiah Awoyeye is turning the manifesto into progress for Ife Central."}
