@@ -11,7 +11,7 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Hon. Abiola Jeremiah Awoyeye — Power to the People" },
-      { name: "description", content: "Member, Osun State House of Assembly, Ife Central Constituency. 35+ completed projects since 2023. Now on the Accord Party platform." },
+      { name: "description", content: "Member, Osun State House of Assembly, Ife Central State Constituency. 35+ completed projects since 2023. Now on the Accord Party platform." },
     ],
   }),
   component: Home,

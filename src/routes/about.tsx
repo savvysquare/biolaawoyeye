@@ -70,7 +70,7 @@ function About() {
             <div className="grid sm:grid-cols-2 gap-6">
                <div className="bg-cream p-8 rounded-[2rem] border border-border/50">
                   <p className="text-grass font-bold mb-3">Legislative Role</p>
-                  <p className="text-sm font-medium text-muted-foreground">Member, Osun State House of Assembly representing Ife Central Constituency.</p>
+                  <p className="text-sm font-medium text-muted-foreground">Member, Osun State House of Assembly representing Ife Central State Constituency.</p>
                </div>
                <div className="bg-cream p-8 rounded-[2rem] border border-border/50">
                   <p className="text-grass font-bold mb-3">Committee Leadership</p>
