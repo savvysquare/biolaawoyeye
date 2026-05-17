@@ -4,7 +4,7 @@ import { useMemo, useState, useEffect } from "react";
 import { ArrowRight, Quote } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import type { Media } from "@/lib/media";
-import ife from "@/assets/home-image.jpg";
+import ife from "@/assets/home-image.webp";
 import { mapToPillar } from "@/lib/pillars";
 
 export const Route = createFileRoute("/")({
