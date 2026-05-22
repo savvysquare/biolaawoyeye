@@ -1,0 +1,1 @@
+UPDATE public.site_content SET value = '37' WHERE key = 'stat_projects';
