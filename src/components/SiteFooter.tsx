@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import logo from "@/assets/logo.png";
 
 export function SiteFooter() {
   return (
@@ -7,9 +8,7 @@ export function SiteFooter() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-16">
           <div className="md:col-span-5">
             <Link to="/" className="flex items-center gap-3 group mb-8">
-              <div className="h-10 w-10 rounded-xl bg-grass grid place-items-center text-white font-bold text-lg shadow-lg shadow-grass/20 group-hover:rotate-12 transition-transform">
-                A
-              </div>
+              <img src={logo} alt="Hon. Abiola J. Awoyeye" className="h-12 w-12 rounded-full object-cover group-hover:rotate-6 transition-transform" />
               <div className="flex flex-col leading-none">
                 <span className="display text-lg font-bold tracking-tight">Hon. Abiola J. Awoyeye</span>
                 <span className="text-[10px] text-muted-foreground font-medium italic">Representative, Ife Central</span>
